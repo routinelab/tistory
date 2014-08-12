@@ -1,8 +1,4 @@
 tistory
 =======
 
-Tistory Blog Skin
-
-
-
-
+Tistory Blog Skin v0.1
