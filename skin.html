@@ -1,16 +1,84 @@
 <html>
 <head>
-	<meta>
-
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+	<meta name="author" content="[##_blogger_##]">
+	<meta name="description" content="[##_desc_##]">
+	<meta name="generator" content="The Spoon Blog">
+	<title>[##_page_title_##] | [##_title_##]</title>
+	<link rel="alternate" type="application/rss+xml" title="[##_title_##]" href="[##_rss_url_##]">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="apple-touch-icon-precomposed" href="./images/apple-touch-icon-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="76x76"  href="./images/apple-touch-icon-76x76-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="./images/apple-touch-icon-120x120-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="./images/apple-touch-icon-152x152-precomposed.png">
+	<meta name="msapplication-TileImage" content="./images/msapplication-114x114.png">
+	<meta name="msapplication-TileColor" content="#222222">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="./style.css" rel="stylesheet" >
+	<!-- 테스트를 위한 css 재지정 : 배포과정에선 제거해야 한다 . -->
+	<link href="http://localhost/style.css" rel="stylesheet">
+	<!--[if lt IE 9]>
+		<script src="./images/html5shiv.min.js"></script>
+		<script src="./images/respond.min.js"></script>
+		<link rel="stylesheet" href="./images/ie.css">
+	<![endif]-->
 </head>
 <body>
-	<header id="header"></header>
-	<nav id="navigation"></nav>
-	<main id="contents">
-		<section id="content"></section>
-		<aside id="sidebar"></aside>
+<s_t3>
+<a href="#content" class="sr-only">콘텐츠로 바로가기</a>
+<div id="body-wrap">
+
+<!-- 해더
+=============================================================== -->
+	<header id="header">
+		<div class="container">
+			<div class="nav-toggle">
+				<button id="menu-toggle" class="btn"><span class="fa fa-lg fa-bars"></span></button>
+				<button id="search-toggle" class="btn"><span class="fa fa-lg fa-search"></span></button>
+			</div>
+			<!-- 블로그 타이틀 (제목 및 이미지 영역) -->
+			<div class="title">
+				<h1><a href="[##_blog_link_##]"><span>[##_title_##]</span></a></h1>
+			</div>
+			<!-- // 블로그 타이틀 -->
+		</div>
+	</header>
+<!-- ========================================================== -->
+
+
+<!-- 네비게이션
+=============================================================== -->
+	<nav id="navigation">
+		<div class="container">
+			<!-- 블로그 메뉴 -->
+			<div id="gnb-menu">
+					[##_category_list_##]
+			</div>
+			<!-- 가테고리 메뉴 -->
+			<div id="blog-menu">
+				<ul>
+					<li><span class="fa fa-home"></span><a href="/">Home</a></li>
+					<li><span class="fa fa-tags"></span><a href="/tag">Tag</a></li>
+					<li><span class="fa fa-book"></span><a href="/guestbook">Guestbook</a></li>
+					<li><span class="fa fa-location-arrow"></span><a href="/location">Location</a></li>
+					<li><span class="fa fa-camera"></span><a href="/media">Media</a></li>
+					<li><span class="fa fa-rss"></span><a href="[##_rss_url_##]" onclick="window.open(this.href);return false;">RSS</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+<!-- ========================================================== -->
+
+	<main>
+		<div class="container">
+			
+
+			
+		</div>
 	</main>
-	<footer id="footer"></footer>
+</div>
+</s_t3>	
 </body>
 </html>
-
