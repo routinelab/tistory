@@ -18,7 +18,7 @@
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="./style.css" rel="stylesheet" >
 	<!-- 테스트를 위한 css 재지정 : 배포과정에선 제거해야 한다 . -->
-	<link href="http://localhost/style.css" rel="stylesheet">
+	<link href="http://192.168.0.7/style.css" rel="stylesheet">
 	<!--[if lt IE 9]>
 		<script src="./images/html5shiv.min.js"></script>
 		<script src="./images/respond.min.js"></script>
@@ -35,50 +35,160 @@
 	<header id="header">
 		<div class="container">
 			<div class="nav-toggle">
-				<button id="menu-toggle" class="btn"><span class="fa fa-lg fa-bars"></span></button>
-				<button id="search-toggle" class="btn"><span class="fa fa-lg fa-search"></span></button>
+				<button id="menu-toggle" class="btn"><span class="fa fa-2x fa-bars"></span></button>
 			</div>
 			<!-- 블로그 타이틀 (제목 및 이미지 영역) -->
 			<div class="title">
-				<h1><a href="[##_blog_link_##]"><span>[##_title_##]</span></a></h1>
+				<h1><a href="[##_blog_link_##]" class="ellipsis">[##_title_##]</a></h1>
 			</div>
 			<!-- // 블로그 타이틀 -->
 		</div>
 	</header>
 <!-- ========================================================== -->
 
-
 <!-- 네비게이션
 =============================================================== -->
 	<nav id="navigation">
 		<div class="container">
+			<div id="search">
+				<s_search>
+					<div class="search-wrap">
+						<span class="fa fa-lg fa-search"></span>
+						<input type="text" name="[##_search_name_##]" value="[##_search_text_##]" onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }" />
+					</div>
+					<button onclick="[##_search_onclick_submit_##]">Search</button>
+				</s_search>
+			</div>
 			<!-- 블로그 메뉴 -->
 			<div id="gnb-menu">
 					[##_category_list_##]
 			</div>
+			<!-- // 블로그 메뉴 -->
 			<!-- 가테고리 메뉴 -->
 			<div id="blog-menu">
 				<ul>
-					<li><span class="fa fa-home"></span><a href="/">Home</a></li>
-					<li><span class="fa fa-tags"></span><a href="/tag">Tag</a></li>
-					<li><span class="fa fa-book"></span><a href="/guestbook">Guestbook</a></li>
-					<li><span class="fa fa-location-arrow"></span><a href="/location">Location</a></li>
-					<li><span class="fa fa-camera"></span><a href="/media">Media</a></li>
-					<li><span class="fa fa-rss"></span><a href="[##_rss_url_##]" onclick="window.open(this.href);return false;">RSS</a></li>
+					<li><a href="/"><span class="fa fa-home"></span>Home</a></li>
+					<li><a href="/tag"><span class="fa fa-tags"></span>Tag</a></li>
+					<li><a href="/guestbook"><span class="fa fa-book"></span>Guestbook</a></li>
+					<li><a href="/location"><span class="fa fa-location-arrow"></span>Location</a></li>
+					<li><a href="/media"><span class="fa fa-camera"></span>Media</a></li>
+					<li><a href="[##_rss_url_##]" onclick="window.open(this.href);return false;"><span class="fa fa-rss"></span>RSS</a></li>
 				</ul>
 			</div>
+			<!-- // 가테고리 메뉴 -->
 		</div>
 	</nav>
 <!-- ========================================================== -->
 
+<!-- 로케이션
+=============================================================== -->
+	<div id="location">
+		<div class="container">
+			<h1 id="page-title"></h1>
+		</div>
+	</div>
+<!-- ========================================================== -->
+
 	<main>
 		<div class="container">
-			
+			<div id="content">
 
+<!-- 블로그 보호글
+=============================================================== -->
+			<s_article_protected>
+				<section class="entry">
+					<header class="entry-title">
+						<h2><a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a></h1>
+					</header>
+					<div class="entry-meta">
+						<div class="entry-info entry-date">
+							<span>
+								Posted : 
+								<span>[##_article_rep_date_##]</span>
+							</span>
+						</div>
+					</div>
+					<div class="entry-content">
+						[##_article_rep_desc_##]
+					</div>
+				</section>
+			</s_article_protected>
+<!-- ========================================================== -->
 			
+<!-- 블로그 글
+=============================================================== -->
+			<s_article_rep>
+				<section class="entry">
+					<header class="entry-title">
+						<h2><a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a></h1>
+					</header>
+					<div class="entry-meta">
+						<div class="entry-info entry-date">
+							<span>
+								Posted : 
+								<span class="datetime">[##_article_rep_date_##]</span>
+							</span>
+						</div>
+						<div class="entry-info entry-category">
+							<span>
+								Category : 
+								<span>
+									<a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a>
+								</span>
+							</span>
+						</div>
+						<div class="entry-info entry-tag">
+							<span>
+								Tags : 
+								<span>
+									<s_tag_label>[##_tag_label_rep_##]</s_tag_label>
+								</span>
+							</span>
+						</div>
+						<div class="entry-info entry-tracback" onclick="[##_article_rep_tb_link_##]">
+							<s_tb_count>[##_article_rep_tb_cnt_##]</s_tb_count>
+						</div>
+						<div class="entry-info entry-comment" onclick="[##_article_rep_rp_link_##]">
+							<s_rp_count>[##_article_rep_rp_cnt_##]</s_rp_count>
+						</div>
+						<div class="entry-info entry-author">
+							<span>
+								Posted by : 
+								<span class="meta-value">
+									<a href="[##_article_rep_link_##]">[##_article_rep_author_##]</a>
+								</span>
+							</span>
+						</div>
+					</div>
+					<div class="entry-content">
+						[##_article_rep_desc_##]
+					</div>
+				</section>
+			</s_article_rep>
+<!-- ========================================================== -->
+
+
+
+
+
+				
+			</div>
+			<aside id="sidebar">
+				
+			</aside>
 		</div>
 	</main>
+
+	<footer id="footer">
+		
+
+	</footer>
 </div>
+
+<script src="./images/jquery-1.11.1.min.js"></script>
+<script src="./images/jquery.mobile.touch.min.js"></script>
+<script src="./images/modernizr.js"></script>
+<script src="http://192.168.0.7/images/common.js"></script>
 </s_t3>	
 </body>
 </html>

@@ -1,0 +1,58 @@
+// Entry
+// ---------------------------------------------
+
+#page-title {
+	padding: 40px 0 30px 0;
+	font-size: 22px;
+	font-weight: normal;
+	border-bottom: solid 1px @border-color;
+}
+
+.entry {
+	margin-top: 40px;
+	width: 100%;
+
+	.entry-title {
+
+		margin-bottom: 30px;
+
+		a {
+			display: block;
+			padding: 14px 20px;
+			line-height: 1.1;
+			color: #fff;
+			background-color: @main-color;
+			font-size: 20px;
+		}
+
+	}
+
+	.entry-meta {
+		margin-top: -26px;
+		margin-bottom: 30px;
+		overflow: hidden;
+
+		.entry-info {
+			display: none;
+			float: right;
+			font-weight: bold;
+			color: @main-color;
+
+			span span {
+				font-style: italic;
+				font-weight: normal;
+				padding-right: 4px;
+				color: lighten(@color, 50%);
+			}
+		}
+
+		.entry-date {
+			display: block;
+		}
+	}
+}
+
+// - entry content mark down css
+.entry-content {
+	line-height: 1.4;
+}

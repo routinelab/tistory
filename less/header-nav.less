@@ -1,0 +1,216 @@
+// Header, Navigation, Location
+// -----------------------------------------------------
+
+// header의 height 만큼 아래로 띄워 준다.
+#body-wrap {
+	width: 100%;
+	padding-top: 50px;
+	min-height: 100%;
+	background-color: #fff;
+	.transition(margin-left 0.3s ease-out);
+}
+
+#header {
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0;
+	height: 50px;
+	background-color: @color; //@main-color;
+	.transition(left 0.3s ease-out);
+
+	#menu-toggle {
+		left: 0;
+		margin: 0;
+		padding: 0;
+	}
+
+	.title {
+		display: block;
+		height: 50px;
+		line-height: 50px;
+		padding: 0 0 0 30px;
+		text-align: center;
+
+		h1 a {
+			display: block;
+			width: 100%;
+			font-size: 20px;
+			color: #fff;
+
+			&:hover {
+				color: #fff;
+			}
+		}
+	}
+	
+	.nav-toggle {
+		position: relative;
+	}
+	.btn {
+		z-index: 1;
+		position: absolute;
+		border: none;
+		background-color: inherit;
+		color: #fff;
+		top: 10px;
+	}
+}
+
+// 사이드 메뉴 숨김
+#navigation {
+	position: fixed;
+	top: 0;
+	left: -240px;
+	width: 240px;
+	height: 100%;
+	z-index: 1;
+	background-color: darken(@color, 10%);
+	//-webkit-overflow-scrolling: touch;
+	.transition(left 0.3s ease-out);
+
+	&>.container {
+		padding: 0;
+		height: 100%;
+		overflow-y: auto;
+	}
+
+	#search {
+		height: 50px;
+		background-color: darken(@color, 5%);
+		position: relative;
+
+		button {
+			display: none;
+		}
+
+		.search-wrap {
+			position: absolute;
+			left: 10px;
+			top: 10px;
+			width: 210px;
+			height: 30px;
+			border-radius: 15px;
+			padding-left: 10px;
+			background-color: lighten(@color, 5%);
+			box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+			input {
+				width: 140px;
+				margin: 4px 0 0 10px;
+				padding: 0;
+				font-size: 16px;
+				font-weight: bold;
+				color: #eee;
+				border: none;
+				vertical-align: middle;
+				background-color: lighten(@color, 5%);
+
+				&::selection {
+					background-color: lighten(@color, 5%);
+				}
+			}
+
+			span {
+				font-size: 14px;
+				color: #aaa;
+				padding: 10px 0 0 10px;
+			}
+		}
+	}
+
+	li {
+		border-top: solid 1px @color;
+		border-bottom: solid 1px darken(@color, 10%);
+		background-color: darken(@color, 5%);
+		color: #aaa;
+		font-size: 16px;
+		position: relative;
+
+		a {
+			display: inline-block;
+			color: #aaa;
+			padding:10px 0 10px 20px;
+		}
+	}
+
+	#gnb-menu {
+
+		ul {
+			border-top: solid 1px  darken(@color, 10%);
+
+			li:nth-child(last) {
+				border-bottom: none;
+			}
+
+			ul {
+				margin-bottom: -1px;
+			}
+		}
+
+		a:before {
+			display: inline-block;
+			font-family: FontAwesome;
+			content: "\f054";
+			font-style: normal;
+			font-weight: normal;
+			line-height: 1;
+			width: 26px;
+		}
+
+		li.submenu > a:after {
+			display: block;
+			position: absolute;
+			font-size: 16px;
+			font-weight: bold;
+			right: 20px;
+			top: 10px;
+			content: "+";
+			line-height: 1;
+		}
+
+		li li {
+			li a:before {
+				content: "";
+			}	
+			ul {
+				li {
+					font-size: 14px;
+					border-top: solid 1px  darken(@color, 8%);
+					border-bottom: solid 1px  darken(@color, 13%);
+					background-color: darken(@color, 10%);
+				}
+			}
+
+			&.show > a:after {
+				content: "-";
+			}
+		}
+	}
+
+	#gnb-menu > ul > li > a:before {
+		content: "\f138";
+	}
+
+	#blog-menu {
+		span { 
+			width: 26px;
+		}
+	}
+
+}
+
+// 사이드 메뉴가 열렸을 때
+body.nav-on {
+
+	#navigation {
+		left: 0;
+		box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+	}
+	#body-wrap {
+		margin-left: 240px;
+	}
+	#header {
+		left: 240px;
+	}
+}

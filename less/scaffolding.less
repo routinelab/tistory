@@ -1,0 +1,82 @@
+//
+// Scaffolding
+// --------------------------------------------------
+
+// Reset the box-sizing
+* {
+	.box-sizing(border-box);
+}
+*:before, *:after {
+	.box-sizing(border-box);
+}
+
+body {
+	font-family: @font-family;
+	font-size: @font-size;
+	color: @color;
+	background-color: @background-color;
+	line-height: 1;
+}
+
+// Links
+a {
+	color: @link-color;
+	text-decoration: none;
+	.transition(all 0.2s ease-out);
+
+	&:hover, &:focus {
+		color: @hover-color;
+	}
+}
+
+a, button, input, textarea {
+	outline: none;
+}
+
+// Normalize.less figures reset
+figure {
+	margin: 0;
+}
+
+// Images
+img {
+	vertical-align: middle;
+}
+
+// ol, ul, li
+ol, ul {
+	margin: 0;
+	padding: 0;
+}
+li {
+	list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0; 
+	padding: 0;
+}
+
+p {
+	padding: 0;
+	margin: 0 0 1em 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding-top: 1px;
+}
+
